@@ -1,0 +1,15 @@
+db:
+  database: "mysql"
+  url: "mysql.test.com"
+  port: 3306
+  dbName: "web_service"
+  user: "grafana"
+  passwd: "grafana"
+
+log:
+  fileName: "/root/goWorkspace/serverMonitor/running.log"
+  level: "info"
+
+etcd:
+  endpoints:
+    - "etcd.test.com:2379"

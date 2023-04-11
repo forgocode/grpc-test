@@ -1,0 +1,26 @@
+syntax = "proto3"; //语法声明
+
+package proto; //包名
+
+option go_package="./;proto";
+
+
+//option go_package="path;name";
+//path生成的代码存放的位置，name go所属的包名
+
+//定义一个prpcd服务，接收msg返回response
+service RecordLog{
+    rpc RecordLogMsg(Msg) returns (Reponse){}
+}
+
+//生成的接口代码作为客户端与服务端的约定，服务端必须实现定义的所有接口方法，客户端直接调用同名方法向服务端发起请求。
+
+message Msg{
+    string User = 1;
+	string Module = 2;
+    string Msg = 3;
+}
+
+message Reponse{
+    int32 Result = 1;
+}

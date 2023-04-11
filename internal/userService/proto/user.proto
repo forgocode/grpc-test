@@ -1,0 +1,27 @@
+syntax = "proto3"; //语法声明
+
+package proto; //包名
+
+option go_package="./;proto";
+
+
+//option go_package="path;name";
+//path生成的代码存放的位置，name go所属的包名
+
+//定义一个prpcd服务，接收msg返回response
+service User{
+    rpc UserManager(UserInfo) returns (Reponse){}
+}
+
+
+message UserInfo{
+    int32 ID = 1;
+    string Name = 2;
+	string Passwd = 3;
+    string Email = 4;
+	string Type = 5;
+}
+
+message Reponse{
+    int32 Result = 1;
+}
